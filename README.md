@@ -30,7 +30,7 @@ Next get the Python dependencies:
 
 Obtain the source code:
 
-    git clone git://git.github.com/marcboeker/umaticssync
+    git clone git@github.com:marcboeker/umaticssync.git
 
 Edit the backup jobs in <code>conf/backup_list</code> (examples below) and
 copy them to ~/.umaticssync (create the directory first).
