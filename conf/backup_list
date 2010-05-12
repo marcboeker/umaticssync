@@ -1,0 +1,9 @@
+[name-of-the-job]
+interval = 21600
+post_command = rm /tmp/dump.tar.bz2 && rm -Rfv /tmp/dump
+destination = s3://access_key:secret_key@bucket.example.com
+path = /tmp/dump.tar.bz2
+pre_command = mongodump -d db -o /tmp/dump && tar -cjvpf /tmp/dump.tar.bz2 /srv/dump
+revisions = 10
+encrypt = you@yourprivatekey.com
+compress = true
