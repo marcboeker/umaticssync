@@ -51,10 +51,10 @@ This is a sample backup job, that shows the various options:
 
 	[name-of-the-job]
 	interval = 21600
-	post_command = rm /tmp/dump.tar.bz2 && rm -Rfv /tmp/dump
+	post_command = rm /tmp/dump.tar && rm -Rfv /tmp/dump
 	destination = s3://access_key:secret_key@bucket.example.com
-	path = /tmp/dump.tar.bz2
-	pre_command = mongodump -d db -o /tmp/dump && tar -cjvpf /tmp/dump.tar.bz2 /srv/dump
+	path = /tmp/dump.tar
+	pre_command = mongodump -d db -o /tmp/dump && tar -cpf /tmp/dump.tar /srv/dump
 	revisions = 10
 	encrypt = you@yourprivatekey.com
 	compress = true
@@ -93,7 +93,7 @@ Use gnupg to encrypt backup
 	
 	compress = true|false 
 	
-Let umaticssync compress the files for you
+Let umaticssync compress (using bzip2) the files for you
 
 # Usage
 
